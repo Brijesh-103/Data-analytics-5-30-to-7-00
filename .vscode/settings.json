@@ -1,0 +1,14 @@
+{
+    "files.autoSave": "onWindowChange",
+    "editor.defaultFormatter": "ms-vscode.cmake-tools",
+
+    "mdc.enableFormatting": true,
+
+    "[mdc]": {
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "editor.detectIndentation": false,
+    "editor.formatOnPaste": true,
+    "editor.defaultFormatter": "Nuxt.mdc"
+    }
+}
