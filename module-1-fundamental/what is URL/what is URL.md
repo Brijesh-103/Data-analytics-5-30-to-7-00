@@ -8,7 +8,7 @@
 
   1. **Protocol**: Indicates the method used to access the resource (e.g., HTTP, HTTPS, FTP).
 
-  2. **Domain Name**: The human-readable address of the website (e.g., www.example.com).
+  2. **Domain Name**: The human-readable address of the website (e.g., www.nexolia.cornerhightech.com).
 
   3. **Path**: Specifies the specific location of the resource on the server (e.g., /folder/page.html).
 
