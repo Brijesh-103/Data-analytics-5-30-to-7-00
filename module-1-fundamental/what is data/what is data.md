@@ -1,6 +1,6 @@
 # What is Data?
 
-- Data is a collection of facts, figures, or information that can be used for analysis, decision-making, or communication. 
+- Data is a collection of facts, figures, or information that can be used for analysis, decision-making, or communication.
 
 - It can take various forms, such as numbers, text, images, audio, or video. Data can be structured (organized in a specific format like databases) or unstructured (not organized in a predefined manner, like emails or social media posts).
 
