@@ -205,3 +205,161 @@ RENAME changes the table name.
 ```sql
 RENAME TABLE Student_DB TO flip_Student_DB;
 ```
+
+
+
+
+## 2. DML
+DML stands for Data Manipulation Language. It is used to manipulate (Insert| Update| Delete ) data in the database. 
+**Commands or Queries in DML:**
+- INSERT
+- UPDATE
+- DELETE
+
+### INSERT
+Use INSERT to add new rows to a table.
+
+**Single-row insert:**
+```sql
+INSERT INTO tbl_country (countryname)
+VALUES ('India');
+```
+
+**Multiple-row insert:**
+```sql
+INSERT INTO tbl_country (countryname)
+VALUES ('UK'), ('USA'), ('China'), ('Russia');
+```
+
+**Insert with NULL or unspecified auto-increment id (use column list when possible):**
+```sql
+INSERT INTO tbl_country VALUES (NULL, 'srilanka'), (NULL, 'nigeria');
+```
+
+**Insert from another table:**
+```sql
+INSERT INTO archive_users
+SELECT * FROM users;
+``` 
+### UPDATE
+Use UPDATE to modify existing rows.
+
+```sql
+UPDATE users
+SET name = 'umang', age = 35
+WHERE user_id = 3;
+```
+
+---
+
+### DELETE
+Use DELETE to remove rows from a table.
+
+**Delete all rows:**
+```sql
+DELETE FROM users;
+```
+
+**Delete specific rows:**
+```sql
+DELETE FROM users
+WHERE user_id = 1;
+
+DELETE FROM users
+WHERE name = 'vishal';
+```
+
+**Delete using IN:**
+```sql
+DELETE FROM users
+WHERE user_id IN (3, 5);
+```
+
+**Delete using BETWEEN:**
+```sql
+DELETE FROM users
+WHERE user_id BETWEEN 5 AND 100;
+```
+
+> Note: If you are using transactions (TCL), you can ROLLBACK a DELETE before committing; otherwise the deletion is permanent.
+
+
+
+
+
+
+## 3. DQL (Data Query Language)
+DQL stands for **Data Query Language** and is primarily used for retrieving data using the SELECT statement.
+
+### SELECT
+**Select all rows:**
+```sql
+SELECT * FROM users;
+```
+
+**Select by condition:**
+```sql
+SELECT * FROM users
+WHERE user_id = 2;
+```
+
+**Select specific columns:**
+```sql
+SELECT user_id, name FROM users;
+-- or with a WHERE
+SELECT user_id, name FROM users
+WHERE user_id = 5;
+```
+
+**Limit results (MySQL syntax):**
+```sql
+SELECT * FROM users LIMIT 0, 2;    -- offset 0, 2 rows
+SELECT * FROM users LIMIT 2, 2;    -- offset 2, 2 rows
+-- Alternatively: SELECT * FROM users LIMIT 2 OFFSET 0;
+```
+
+ * Retrieves a limited subset of records from the users table.
+ * 
+ * LIMIT 0, 2 syntax explanation:
+ * - First parameter (0): The offset - specifies how many rows to skip from the beginning
+ *   In this case, 0 means start from the first row with no rows skipped
+ * - Second parameter (2): The row count - specifies the maximum number of rows to return
+ *   In this case, 2 means fetch only 2 rows
+ * 
+ * @returns {ResultSet} A result set containing the first 2 user records from the users table
+ * 
+ * Note: The LIMIT offset, count syntax is commonly used in MySQL.
+ * Alternative syntax: LIMIT count OFFSET offset (e.g., LIMIT 2 OFFSET 0)
+
+**Using IN:**
+```sql
+SELECT * FROM users
+WHERE user_id IN (2, 4, 5, 7);
+```
+
+**Using BETWEEN:**
+```sql
+SELECT * FROM users
+WHERE user_id BETWEEN 4 AND 7;
+```
+
+**ORDER BY (ascending / descending):**
+```sql
+SELECT * FROM users ORDER BY name ASC;
+SELECT * FROM users ORDER BY user_id DESC;
+```
+
+**GROUP BY (aggregation):**
+```sql
+SELECT department, SUM(salary) AS total_salary
+FROM flip_users
+GROUP BY department;
+```
+
+---
+
+> Tips:
+> - Use explicit column lists in INSERT and SELECT for clarity and stability.
+> - Always add a WHERE clause for UPDATE and DELETE unless you intend to affect all rows.
+
+
