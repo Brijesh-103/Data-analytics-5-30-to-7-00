@@ -135,6 +135,8 @@ CREATE TABLE customers (
       customer_id INT AUTO_INCREMENT PRIMARY KEY,
       customer_name VARCHAR(100),
       email VARCHAR(255),
+      phone BIGINT,
+      address TEXT,
       country_id INT,
       FOREIGN KEY (country_id) REFERENCES country(id)
 );
@@ -142,10 +144,13 @@ CREATE TABLE customers (
 
 ## Question 5: insert at least 3 records into the customers table.
 ```sql
-INSERT INTO customers (customer_name, email, country_id) VALUES
-('Alice', 'alice@example.com', 1),
-('Bob', 'bob@example.com', 2),
-('Charlie', 'charlie@example.com', 3);
+INSERT INTO customers (customer_name, email, phone, address, country_id) VALUES
+('Brijesh ', 'brijesh@gmail.com',9909421653, '123 Brijesh St, City A', 1),
+('Raj', 'raj@gmail.com', 9876543212, '456 Raj Ave, City B', 2),
+('Divyang', 'divyang@gmail.com', 9876543213, '123 Divyang St, City D', 2),
+('Het', 'het@gmail.com', 9876543214, '456 Het Ave, City E', 1),
+('Krish', 'krish@gmail.com', 9876543215, '789 Krish Rd, City F', 3),
+('Kishan', 'kishan@gmail.com', 9876543216, '101 Kishan Blvd, City G', 2);
 ```
 
 ## Question 6: create a table named "orders" with the following columns: order_id (primary key), customer_id (foreign key referencing the customers table), product_id (foreign key referencing the products table), quantity, and order_date.
@@ -173,31 +178,32 @@ INSERT INTO orders (customer_id, product_id, quantity, order_date) VALUES
 
 ## Question 8: write a query to select all orders along with customer names and product names.
 ```sql
-SELECT o.order_id, c.customer_name, p.product_name, o.quantity, o.order_date
-FROM orders o JOIN customers c ON o.customer_id = c.customer_id
-JOIN products p ON o.product_id = p.product_id;
+SELECT order_id, customer_name, product_name, quantity, order_date 
+FROM orders JOIN customers ON orders.customer_id = customers.customer_id 
+JOIN products ON orders.product_id = products.product_id;
 ```
 
 ## Question 9: write a query to find the total revenue generated from all orders.
 ```sql
-SELECT SUM(p.price * o.quantity) AS total_revenue
-FROM orders o JOIN products p ON o.product_id = p.product_id;
+SELECT SUM(price * quantity) AS total_revenue 
+FROM orders JOIN products 
+ON orders.product_id = products.product_id;
 ```
 
 ## Question 10: write a query to find the most popular product based on the quantity ordered.
 ```sql
-SELECT p.product_name, SUM(o.quantity) AS total_quantity
-FROM orders o JOIN products p ON o.product_id = p.product_id
-GROUP BY p.product_name
+SELECT product_name, SUM(o.quantity) AS total_quantity
+FROM orders JOIN products ON orders.product_id = products.product_id
+GROUP BY product_name
 ORDER BY total_quantity DESC
 LIMIT 1;
 ```
 
 ## Question 11: write a query to update the stock of a product after an order is placed.
 ```sql
-UPDATE products p JOIN orders o ON p.product_id = o.product_id
-SET p.stock = p.stock - o.quantity
-WHERE o.order_id = 1;
+UPDATE products JOIN orders ON products.product_id = orders.product_id
+SET stock = stock - quantity
+WHERE order_id = 1;
 ```
 
 ## Question 12: write a query to delete an order with a specific order_id.
