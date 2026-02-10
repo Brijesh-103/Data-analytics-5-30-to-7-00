@@ -363,3 +363,5 @@ GROUP BY department;
 > - Always add a WHERE clause for UPDATE and DELETE unless you intend to affect all rows.
 
 
+---
+
