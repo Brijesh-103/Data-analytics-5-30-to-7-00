@@ -95,10 +95,12 @@ WHERE id = 3;
 DELETE FROM students
 WHERE id = 5;
 ```
-&nbsp;
 ---
 
+<hr style="border: 3px solid black;">
+
 ---
+
 &nbsp;
 # Add to cart database
 
