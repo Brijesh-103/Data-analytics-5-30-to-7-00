@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Brijesh Shekhda — Data Analyst & Data Scientist portfolio. Expert in Python, SQL, Power BI, Tableau, Machine Learning and Data Visualization." />
+  <title>Brijesh Shekhda | Data Analyst & Data Scientist</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome (Icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- TailwindCSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { inter: ['Inter', 'sans-serif'] },
+          colors: {
+            accent: '#6366f1',
+            accent2: '#06b6d4',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body class="font-inter antialiased">
+
+<!-- ═══════════════════════════════════════════════
+     LOADING SCREEN
+═══════════════════════════════════════════════ -->
+<div id="loader">
+  <div class="loader-logo">BS.</div>
+  <div class="loader-spinner"></div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     BACK TO TOP BUTTON
+═══════════════════════════════════════════════ -->
+<button id="backToTop" aria-label="Back to Top">
+  <i class="fas fa-arrow-up"></i>
+</button>
+
+<!-- ═══════════════════════════════════════════════
+     NAVBAR
+═══════════════════════════════════════════════ -->
+<nav id="navbar" role="navigation" aria-label="Main navigation">
+  <div class="container">
+    <div class="flex items-center justify-between h-16 gap-6">
+
+      <!-- Logo -->
+      <a href="#hero" class="text-xl font-black gradient-text tracking-tight flex-shrink-0">
+        BS<span class="text-text-primary">.</span>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <div class="hidden md:flex items-center gap-6 text-sm">
+        <a href="#about"   class="nav-link">About</a>
+        <a href="#skills"  class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#gallery" class="nav-link">Gallery</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#certifications" class="nav-link">Certifications</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </div>
+
+      <!-- Right Controls -->
+      <div class="flex items-center gap-3">
+        <button id="darkToggle" aria-label="Toggle dark mode">
+          <span id="darkIcon">🌙</span>
+        </button>
+        <!-- Hamburger -->
+        <button id="hamburger" class="md:hidden flex flex-col gap-[6px] p-1 cursor-pointer bg-transparent border-0" aria-label="Open menu">
+          <span class="ham-line"></span>
+          <span class="ham-line"></span>
+          <span class="ham-line"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu">
+    <a href="#about"          class="mobile-nav-link">About</a>
+    <a href="#skills"         class="mobile-nav-link">Skills</a>
+    <a href="#projects"       class="mobile-nav-link">Projects</a>
+    <a href="#gallery"        class="mobile-nav-link">Gallery</a>
+    <a href="#experience"     class="mobile-nav-link">Experience</a>
+    <a href="#certifications" class="mobile-nav-link">Certifications</a>
+    <a href="#contact"        class="mobile-nav-link">Contact</a>
+  </div>
+</nav>
+
+
+<!-- ═══════════════════════════════════════════════
+     HERO SECTION
+═══════════════════════════════════════════════ -->
+<section id="hero" class="relative">
+  <!-- Blobs -->
+  <div class="hero-blob hero-blob-1"></div>
+  <div class="hero-blob hero-blob-2"></div>
+
+  <div class="container relative z-10">
+    <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-16 py-10">
+
+      <!-- Text -->
+      <div class="flex-1 text-center lg:text-left">
+        <div class="section-badge reveal" style="display:inline-flex">
+          <span>👋</span> Available for hire
+        </div>
+        <h1 class="hero-title mt-4 reveal reveal-delay-1">
+          Hi, I'm <span class="gradient-text">Brijesh</span><br />
+          <span class="typewriter-wrap">
+            <span id="typewriter">Data Analyst</span>
+          </span>
+        </h1>
+        <p class="hero-description mt-5 reveal reveal-delay-2">
+          Transforming raw data into actionable insights. I specialize in
+          <strong>Python</strong>, <strong>SQL</strong>, <strong>Power BI</strong>, and
+          <strong>Machine Learning</strong> — building dashboards and models that drive
+          real business decisions.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-wrap gap-4 mt-8 justify-center lg:justify-start reveal reveal-delay-3">
+          <a href="#projects" class="btn-primary">
+            <i class="fas fa-briefcase"></i> View Projects
+          </a>
+          <a href="#contact" class="btn-outline">
+            <i class="fas fa-download"></i> Download Resume
+          </a>
+        </div>
+
+        <!-- Social Links -->
+        <div class="flex gap-3 mt-8 justify-center lg:justify-start reveal reveal-delay-4">
+          <a href="https://linkedin.com/" target="_blank" rel="noopener" class="social-icon" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="https://github.com/" target="_blank" rel="noopener" class="social-icon" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://kaggle.com/" target="_blank" rel="noopener" class="social-icon" aria-label="Kaggle">
+            <i class="fab fa-kaggle"></i>
+          </a>
+          <a href="mailto:brijesh@email.com" class="social-icon" aria-label="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
+
+        <!-- Quick Stats -->
+        <div class="stats-group grid grid-cols-3 gap-4 mt-10 max-w-sm mx-auto lg:mx-0 reveal reveal-delay-5">
+          <div class="stat-card">
+            <div class="stat-number" data-count="15" data-suffix="+">0+</div>
+            <div class="stat-label">Projects</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" data-count="8" data-suffix="+">0+</div>
+            <div class="stat-label">Certifications</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" data-count="2" data-suffix="yr">0yr</div>
+            <div class="stat-label">Experience</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Profile Image -->
+      <div class="flex-shrink-0 reveal-scale reveal-delay-2">
+        <div class="profile-ring">
+          <img
+            src="assets/images/profile.png"
+            alt="Brijesh Shekhda — Data Analyst and Data Scientist"
+            width="280" height="280"
+            style="width:280px;height:280px;object-fit:cover;"
+          />
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+     ABOUT ME SECTION
+═══════════════════════════════════════════════ -->
+<section id="about" class="bg-alt">
+  <div class="container">
+    <div class="text-center mb-14 reveal">
+      <div class="section-badge" style="display:inline-flex">About Me</div>
+      <h2 class="section-title mt-3">The Story Behind <span class="gradient-text">the Data</span></h2>
+    </div>
+
+    <div class="flex flex-col lg:flex-row items-start gap-12 lg:gap-16">
+
+      <!-- Image -->
+      <div class="lg:w-5/12 reveal-scale">
+        <div class="card overflow-hidden">
+          <img
+            src="assets/images/profile.png"
+            alt="Brijesh Shekhda profile"
+            class="w-full object-cover"
+            style="height:420px"
+          />
+        </div>
+      </div>
+
+      <!-- Content -->
+      <div class="lg:w-7/12 space-y-6">
+
+        <div class="reveal">
+          <p class="text-lg" style="color:var(--text-secondary);line-height:1.8">
+            I'm a passionate <strong style="color:var(--text-primary)">Data Analyst & Data Scientist</strong> with
+            hands-on experience turning complex datasets into clear, actionable business intelligence.
+            I thrive at the intersection of <em>statistics, programming, and storytelling</em>.
+          </p>
+        </div>
+
+        <div class="reveal reveal-delay-1">
+          <p style="color:var(--text-secondary);line-height:1.8">
+            My journey started with Excel and SQL, then evolved into Python-powered machine learning pipelines,
+            interactive Power BI dashboards, and predictive analytics. I love asking the right questions
+            and letting the data answer them.
+          </p>
+        </div>
+
+        <!-- Key highlights chips -->
+        <div class="flex flex-wrap gap-3 reveal reveal-delay-2">
+          <span class="highlight-chip"><i class="fab fa-python text-yellow-500"></i> Python Expert</span>
+          <span class="highlight-chip"><i class="fas fa-database text-blue-500"></i> SQL Proficient</span>
+          <span class="highlight-chip"><i class="fas fa-chart-bar text-orange-500"></i> Power BI</span>
+          <span class="highlight-chip"><i class="fas fa-robot text-purple-500"></i> Machine Learning</span>
+          <span class="highlight-chip"><i class="fas fa-table text-green-500"></i> Excel / VBA</span>
+          <span class="highlight-chip"><i class="fas fa-chart-pie text-cyan-500"></i> Tableau</span>
+        </div>
+
+        <!-- Quick facts -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 reveal reveal-delay-3">
+          <div class="flex items-center gap-3">
+            <span class="text-2xl">🎓</span>
+            <div>
+              <div class="font-bold text-sm" style="color:var(--text-primary)">B.Tech in Computer Science</div>
+              <div class="text-sm" style="color:var(--text-muted)">GTU, 2023</div>
+            </div>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="text-2xl">📍</span>
+            <div>
+              <div class="font-bold text-sm" style="color:var(--text-primary)">Based in Gujarat, India</div>
+              <div class="text-sm" style="color:var(--text-muted)">Open to Remote</div>
+            </div>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="text-2xl">💼</span>
+            <div>
+              <div class="font-bold text-sm" style="color:var(--text-primary)">2+ Years Experience</div>
+              <div class="text-sm" style="color:var(--text-muted)">Analytics & BI</div>
+            </div>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="text-2xl">🏆</span>
+            <div>
+              <div class="font-bold text-sm" style="color:var(--text-primary)">8+ Certifications</div>
+              <div class="text-sm" style="color:var(--text-muted)">Google, Microsoft, IBM</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal reveal-delay-4">
+          <a href="#contact" class="btn-primary inline-flex">
+            <i class="fas fa-paper-plane"></i> Let's Connect
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+     SKILLS SECTION
+═══════════════════════════════════════════════ -->
+<section id="skills">
+  <div class="container">
+    <div class="text-center mb-14 reveal">
+      <div class="section-badge" style="display:inline-flex"><i class="fas fa-code"></i> Technical Skills</div>
+      <h2 class="section-title mt-3">My <span class="gradient-text">Toolkit</span></h2>
+      <p class="section-subtitle mt-4 mx-auto">
+        Tools and technologies I use to transform data into impactful insights.
+      </p>
+    </div>
+
+    <!-- Skill Cards Grid -->
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5">
+
+      <div class="skill-card reveal reveal-delay-1">
+        <span class="skill-icon">🐍</span>
+        <div class="skill-name">Python</div>
+        <div class="skill-level">
+          <div class="skill-level-fill" data-level="92"></div>
+        </div>
+        <div class="text-xs mt-2" style="color:var(--text-muted)">Pandas · NumPy · Scikit-learn</div>
+      </div>
+
+      <div class="skill-card reveal reveal-delay-2">
+        <span class="skill-icon">🗄️</span>
+        <div class="skill-name">SQL</div>
+        <div class="skill-level">
+          <div class="skill-level-fill" data-level="88"></div>
+        </div>
+        <div class="text-xs mt-2" style="color:var(--text-muted)">MySQL · PostgreSQL · BigQuery</div>
+      </div>
+
+      <div class="skill-card reveal reveal-delay-3">
+        <span class="skill-icon">📊</span>
+        <div class="skill-name">Power BI</div>
+        <div class="skill-level">
+          <div class="skill-level-fill" data-level="85"></div>
+        </div>
+        <div class="text-xs mt-2" style="color:var(--text-muted)">DAX · Power Query · Reports</div>
+      </div>
+
+      <div class="skill-card reveal reveal-delay-4">
+        <span class="skill-icon">📈</span>
+        <div class="skill-name">Tableau</div>
+        <div class="skill-level">
+          <div class="skill-level-fill" data-level="80"></div>
+        </div>
+        <div class="text-xs mt-2" style="color:var(--text-muted)">Dashboards · Stories · Prep</div>
+      </div>
+
+      <div class="skill-card reveal reveal-delay-1">
+        <span class="skill-icon">🤖</span>
+        <div class="skill-name">Machine Learning</div>
+        <div class="skill-level">
+          <div class="skill-level-fill" data-level="78"></div>
+        </div>
+        <div class="text-xs mt-2" style="color:var(--text-muted)">Classification · Regression · Clustering</div>
+      </div>
+
+      <div class="skill-card reveal reveal-delay-2">
+        <span class="skill-icon">📉</span>
+        <div class="skill-name">Statistics</div>
+        <div class="skill-level">
+          <div class="skill-level-fill" data-level="84"></div>
+        </div>
+        <div class="text-xs mt-2" style="color:var(--text-muted)">Hypothesis Testing · Probability</div>
+      </div>
+
+      <div class="skill-card reveal reveal-delay-3">
+        <span class="skill-icon">📋</span>
+        <div class="skill-name">Excel</div>
+        <div class="skill-level">
+          <div class="skill-level-fill" data-level="90"></div>
+        </div>
+        <div class="text-xs mt-2" style="color:var(--text-muted)">Pivot Tables · VBA · Power Query</div>
+      </div>
+
+      <div class="skill-card reveal reveal-delay-4">
+        <span class="skill-icon">🎨</span>
+        <div class="skill-name">Data Visualization</div>
+        <div class="skill-level">
+          <div class="skill-level-fill" data-level="87"></div>
+        </div>
+        <div class="text-xs mt-2" style="color:var(--text-muted)">Matplotlib · Seaborn · Plotly</div>
+      </div>
+
+    </div>
+
+    <!-- Tech Tags Row -->
+    <div class="flex flex-wrap gap-3 justify-center mt-12 reveal">
+      <span class="project-tag text-sm px-4 py-2">Jupyter Notebook</span>
+      <span class="project-tag text-sm px-4 py-2">VS Code</span>
+      <span class="project-tag text-sm px-4 py-2">Git & GitHub</span>
+      <span class="project-tag text-sm px-4 py-2">Google Colab</span>
+      <span class="project-tag text-sm px-4 py-2">AWS S3</span>
+      <span class="project-tag text-sm px-4 py-2">Streamlit</span>
+      <span class="project-tag text-sm px-4 py-2">TensorFlow</span>
+      <span class="project-tag text-sm px-4 py-2">Beautiful Soup</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+     PROJECTS SECTION
+═══════════════════════════════════════════════ -->
+<section id="projects" class="bg-alt">
+  <div class="container">
+    <div class="text-center mb-14 reveal">
+      <div class="section-badge" style="display:inline-flex"><i class="fas fa-folder-open"></i> Portfolio</div>
+      <h2 class="section-title mt-3">Featured <span class="gradient-text">Projects</span></h2>
+      <p class="section-subtitle mt-4 mx-auto">
+        Real-world data problems solved with analytics, machine learning, and visualization.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-7">
+
+      <!-- Project 1 -->
+      <div class="project-card reveal reveal-delay-1">
+        <div class="project-img-wrap">
+          <img src="assets/images/project1.png" alt="Sales Dashboard Power BI" />
+        </div>
+        <div class="p-6 flex flex-col gap-4 flex-1">
+          <div>
+            <div class="flex flex-wrap gap-2 mb-3">
+              <span class="project-tag">Power BI</span>
+              <span class="project-tag">Excel</span>
+              <span class="project-tag">DAX</span>
+            </div>
+            <h3 class="text-lg font-bold" style="color:var(--text-primary)">Sales Performance Dashboard</h3>
+            <p class="text-sm mt-2" style="color:var(--text-secondary);line-height:1.7">
+              Interactive Power BI dashboard analyzing $2M+ in sales data across 50+ product categories.
+              Features drill-down, time intelligence, and KPI benchmarking with real-time slicers.
+            </p>
+          </div>
+          <div class="flex gap-5 mt-auto pt-2 border-t" style="border-color:var(--border)">
+            <a href="https://github.com/" target="_blank" rel="noopener" class="project-link">
+              <i class="fab fa-github"></i> GitHub
+            </a>
+            <a href="#" class="project-link">
+              <i class="fas fa-external-link-alt"></i> Live Demo
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="project-card reveal reveal-delay-2">
+        <div class="project-img-wrap">
+          <img src="assets/images/project2.png" alt="Customer Churn Prediction" />
+        </div>
+        <div class="p-6 flex flex-col gap-4 flex-1">
+          <div>
+            <div class="flex flex-wrap gap-2 mb-3">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">Scikit-learn</span>
+              <span class="project-tag">XGBoost</span>
+            </div>
+            <h3 class="text-lg font-bold" style="color:var(--text-primary)">Customer Churn Prediction</h3>
+            <p class="text-sm mt-2" style="color:var(--text-secondary);line-height:1.7">
+              ML classification model predicting customer churn with 91% accuracy. Built with
+              XGBoost, SHAP values for explainability, and a Streamlit web app for real-time scoring.
+            </p>
+          </div>
+          <div class="flex gap-5 mt-auto pt-2 border-t" style="border-color:var(--border)">
+            <a href="https://github.com/" target="_blank" rel="noopener" class="project-link">
+              <i class="fab fa-github"></i> GitHub
+            </a>
+            <a href="#" class="project-link">
+              <i class="fas fa-external-link-alt"></i> Live Demo
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="project-card reveal reveal-delay-3">
+        <div class="project-img-wrap">
+          <img src="assets/images/project3.png" alt="COVID-19 Data Analysis" />
+        </div>
+        <div class="p-6 flex flex-col gap-4 flex-1">
+          <div>
+            <div class="flex flex-wrap gap-2 mb-3">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">Pandas</span>
+              <span class="project-tag">Plotly</span>
+            </div>
+            <h3 class="text-lg font-bold" style="color:var(--text-primary)">COVID-19 Global Data Analysis</h3>
+            <p class="text-sm mt-2" style="color:var(--text-secondary);line-height:1.7">
+              Exploratory data analysis of global COVID-19 spread using 2M+ records. Interactive
+              choropleth maps, time-series forecasting, and vaccine rollout correlations.
+            </p>
+          </div>
+          <div class="flex gap-5 mt-auto pt-2 border-t" style="border-color:var(--border)">
+            <a href="https://github.com/" target="_blank" rel="noopener" class="project-link">
+              <i class="fab fa-github"></i> GitHub
+            </a>
+            <a href="#" class="project-link">
+              <i class="fas fa-external-link-alt"></i> Kaggle
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 4 -->
+      <div class="project-card reveal reveal-delay-4">
+        <div class="project-img-wrap">
+          <img src="assets/images/project4.png" alt="E-commerce Data Analysis" />
+        </div>
+        <div class="p-6 flex flex-col gap-4 flex-1">
+          <div>
+            <div class="flex flex-wrap gap-2 mb-3">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">SQL</span>
+              <span class="project-tag">Tableau</span>
+            </div>
+            <h3 class="text-lg font-bold" style="color:var(--text-primary)">E-Commerce Analytics Suite</h3>
+            <p class="text-sm mt-2" style="color:var(--text-secondary);line-height:1.7">
+              End-to-end e-commerce analytics: customer segmentation (RFM), funnel analysis,
+              cohort retention, and revenue attribution dashboard built with SQL + Tableau.
+            </p>
+          </div>
+          <div class="flex gap-5 mt-auto pt-2 border-t" style="border-color:var(--border)">
+            <a href="https://github.com/" target="_blank" rel="noopener" class="project-link">
+              <i class="fab fa-github"></i> GitHub
+            </a>
+            <a href="#" class="project-link">
+              <i class="fas fa-external-link-alt"></i> Live Demo
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="text-center mt-10 reveal">
+      <a href="https://github.com/" target="_blank" rel="noopener" class="btn-outline">
+        <i class="fab fa-github"></i> View All Projects on GitHub
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+     DATA VISUALIZATION GALLERY
+═══════════════════════════════════════════════ -->
+<section id="gallery">
+  <div class="container">
+    <div class="text-center mb-14 reveal">
+      <div class="section-badge" style="display:inline-flex"><i class="fas fa-images"></i> Gallery</div>
+      <h2 class="section-title mt-3">Visualization <span class="gradient-text">Gallery</span></h2>
+      <p class="section-subtitle mt-4 mx-auto">
+        A showcase of dashboards and charts crafted with Power BI, Tableau, and Python.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <div class="gallery-item reveal reveal-delay-1">
+        <img src="assets/images/gallery/viz1.png" alt="Power BI Executive Dashboard" />
+        <div class="gallery-overlay">
+          <span>Power BI Executive Dashboard</span>
+        </div>
+      </div>
+
+      <div class="gallery-item reveal reveal-delay-2">
+        <img src="assets/images/gallery/viz2.png" alt="Tableau Interactive Dashboard" />
+        <div class="gallery-overlay">
+          <span>Tableau Interactive Dashboard</span>
+        </div>
+      </div>
+
+      <div class="gallery-item reveal reveal-delay-3">
+        <img src="assets/images/gallery/viz3.png" alt="Python Data Analysis Charts" />
+        <div class="gallery-overlay">
+          <span>Python EDA Visualization</span>
+        </div>
+      </div>
+
+    </div>
+
+    <p class="text-center text-sm mt-6 reveal" style="color:var(--text-muted)">
+      <i class="fas fa-search-plus mr-1"></i> Click any image to zoom
+    </p>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+     EXPERIENCE / EDUCATION TIMELINE
+═══════════════════════════════════════════════ -->
+<section id="experience" class="bg-alt">
+  <div class="container">
+    <div class="text-center mb-14 reveal">
+      <div class="section-badge" style="display:inline-flex"><i class="fas fa-history"></i> Journey</div>
+      <h2 class="section-title mt-3">Experience & <span class="gradient-text">Education</span></h2>
+    </div>
+
+    <div class="flex flex-col lg:flex-row gap-12 lg:gap-16">
+
+      <!-- Experience -->
+      <div class="lg:w-1/2 reveal reveal-delay-1">
+        <h3 class="text-xl font-bold mb-8 flex items-center gap-3" style="color:var(--text-primary)">
+          <span class="w-9 h-9 rounded-full flex items-center justify-center text-sm text-white" style="background:linear-gradient(135deg,var(--accent),var(--accent2))">
+            <i class="fas fa-briefcase"></i>
+          </span>
+          Work Experience
+        </h3>
+        <div class="timeline">
+
+          <div class="timeline-item">
+            <div class="timeline-date">2024 — Present</div>
+            <div class="timeline-title">Data Analyst</div>
+            <div class="timeline-company">Tech Solutions Pvt. Ltd. · Full-time</div>
+            <div class="timeline-desc">
+              Designed and maintained Power BI dashboards for 10+ business units. Automated ETL
+              pipelines using Python + SQL, reducing reporting time by 60%. Performed A/B testing
+              and statistical analysis to guide product decisions.
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-date">2023 — 2024</div>
+            <div class="timeline-title">Data Analyst Intern</div>
+            <div class="timeline-company">DataViz Analytics · Internship</div>
+            <div class="timeline-desc">
+              Assisted in building Tableau dashboards and cleaning datasets using Python Pandas.
+              Performed EDA on customer behavior data and contributed to churn prediction models.
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-date">2022 — 2023</div>
+            <div class="timeline-title">Junior SQL Developer</div>
+            <div class="timeline-company">StartupHub · Part-time</div>
+            <div class="timeline-desc">
+              Wrote complex SQL queries and stored procedures for data extraction. Built
+              Excel-based reporting templates with VBA macros for the sales team.
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Education -->
+      <div class="lg:w-1/2 reveal reveal-delay-2">
+        <h3 class="text-xl font-bold mb-8 flex items-center gap-3" style="color:var(--text-primary)">
+          <span class="w-9 h-9 rounded-full flex items-center justify-center text-sm text-white" style="background:linear-gradient(135deg,var(--accent),var(--accent2))">
+            <i class="fas fa-graduation-cap"></i>
+          </span>
+          Education
+        </h3>
+        <div class="timeline">
+
+          <div class="timeline-item">
+            <div class="timeline-date">2019 — 2023</div>
+            <div class="timeline-title">B.Tech — Computer Science & Engineering</div>
+            <div class="timeline-company">Gujarat Technological University (GTU)</div>
+            <div class="timeline-desc">
+              Specialized in data structures, algorithms, databases, and machine learning.
+              Final Year Project: Real-time Sentiment Analysis Dashboard using Python & Power BI.
+              CGPA: 8.2 / 10.
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-date">2024</div>
+            <div class="timeline-title">Data Science Bootcamp</div>
+            <div class="timeline-company">TOPS Technology — Ahmedabad</div>
+            <div class="timeline-desc">
+              Intensive 6-month program covering Python, Machine Learning, SQL, Power BI, Tableau,
+              and end-to-end data science project workflow. Hands-on projects with real datasets.
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-date">2023</div>
+            <div class="timeline-title">Higher Secondary (Science)</div>
+            <div class="timeline-company">Government Science College</div>
+            <div class="timeline-desc">
+              Completed HSC with Physics, Chemistry, Mathematics. Achieved 88% aggregate score.
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+     CERTIFICATIONS SECTION
+═══════════════════════════════════════════════ -->
+<section id="certifications">
+  <div class="container">
+    <div class="text-center mb-14 reveal">
+      <div class="section-badge" style="display:inline-flex"><i class="fas fa-certificate"></i> Credentials</div>
+      <h2 class="section-title mt-3">My <span class="gradient-text">Certifications</span></h2>
+      <p class="section-subtitle mt-4 mx-auto">
+        Industry-recognized credentials that validate my technical expertise.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <div class="cert-card reveal reveal-delay-1">
+        <div class="cert-badge">🔵</div>
+        <div>
+          <div class="cert-issuer">Google</div>
+          <div class="cert-name">Google Data Analytics Professional Certificate</div>
+          <div class="cert-date">Issued: Jan 2024</div>
+        </div>
+        <a href="#" class="project-link text-xs">View Credential <i class="fas fa-arrow-right"></i></a>
+      </div>
+
+      <div class="cert-card reveal reveal-delay-2">
+        <div class="cert-badge">🟠</div>
+        <div>
+          <div class="cert-issuer">Microsoft</div>
+          <div class="cert-name">Microsoft Power BI Data Analyst (PL-300)</div>
+          <div class="cert-date">Issued: Mar 2024</div>
+        </div>
+        <a href="#" class="project-link text-xs">View Credential <i class="fas fa-arrow-right"></i></a>
+      </div>
+
+      <div class="cert-card reveal reveal-delay-3">
+        <div class="cert-badge">🟣</div>
+        <div>
+          <div class="cert-issuer">IBM</div>
+          <div class="cert-name">IBM Data Science Professional Certificate</div>
+          <div class="cert-date">Issued: Jun 2024</div>
+        </div>
+        <a href="#" class="project-link text-xs">View Credential <i class="fas fa-arrow-right"></i></a>
+      </div>
+
+      <div class="cert-card reveal reveal-delay-1">
+        <div class="cert-badge">🟡</div>
+        <div>
+          <div class="cert-issuer">Kaggle</div>
+          <div class="cert-name">Python & Machine Learning Certifications</div>
+          <div class="cert-date">Issued: 2023</div>
+        </div>
+        <a href="#" class="project-link text-xs">View Credential <i class="fas fa-arrow-right"></i></a>
+      </div>
+
+      <div class="cert-card reveal reveal-delay-2">
+        <div class="cert-badge">🔴</div>
+        <div>
+          <div class="cert-issuer">Coursera / DeepLearning.AI</div>
+          <div class="cert-name">Machine Learning Specialization</div>
+          <div class="cert-date">Issued: Aug 2024</div>
+        </div>
+        <a href="#" class="project-link text-xs">View Credential <i class="fas fa-arrow-right"></i></a>
+      </div>
+
+      <div class="cert-card reveal reveal-delay-3">
+        <div class="cert-badge">🟢</div>
+        <div>
+          <div class="cert-issuer">HackerRank</div>
+          <div class="cert-name">SQL Advanced Certification</div>
+          <div class="cert-date">Issued: 2023</div>
+        </div>
+        <a href="#" class="project-link text-xs">View Credential <i class="fas fa-arrow-right"></i></a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+     CONTACT SECTION
+═══════════════════════════════════════════════ -->
+<section id="contact" class="bg-alt">
+  <div class="container">
+    <div class="text-center mb-14 reveal">
+      <div class="section-badge" style="display:inline-flex"><i class="fas fa-paper-plane"></i> Contact</div>
+      <h2 class="section-title mt-3">Get In <span class="gradient-text">Touch</span></h2>
+      <p class="section-subtitle mt-4 mx-auto">
+        Have a project in mind or want to collaborate? I'd love to hear from you.
+      </p>
+    </div>
+
+    <div class="flex flex-col lg:flex-row gap-12">
+
+      <!-- Contact Info -->
+      <div class="lg:w-5/12 space-y-6 reveal reveal-delay-1">
+        <div class="card p-7 space-y-5">
+
+          <h3 class="text-xl font-bold" style="color:var(--text-primary)">Let's talk data! 📊</h3>
+          <p style="color:var(--text-secondary);line-height:1.75;font-size:0.95rem">
+            Whether it's freelance analytics work, a full-time opportunity, or just to chat about data science —
+            my inbox is always open.
+          </p>
+
+          <div class="space-y-4">
+            <a href="mailto:brijesh@email.com" class="flex items-center gap-4 p-3 rounded-xl hover:bg-accent hover:bg-opacity-10 transition-all">
+              <span class="w-10 h-10 rounded-lg flex items-center justify-center text-white text-base flex-shrink-0"
+                    style="background:linear-gradient(135deg,var(--accent),var(--accent2))">
+                <i class="fas fa-envelope"></i>
+              </span>
+              <div>
+                <div class="text-xs font-semibold uppercase tracking-wider" style="color:var(--text-muted)">Email</div>
+                <div class="font-semibold text-sm" style="color:var(--text-primary)">brijesh@email.com</div>
+              </div>
+            </a>
+
+            <a href="https://linkedin.com/" target="_blank" rel="noopener" class="flex items-center gap-4 p-3 rounded-xl hover:bg-accent hover:bg-opacity-10 transition-all">
+              <span class="w-10 h-10 rounded-lg flex items-center justify-center text-white text-base flex-shrink-0"
+                    style="background:linear-gradient(135deg,#0077b5,#00a0dc)">
+                <i class="fab fa-linkedin-in"></i>
+              </span>
+              <div>
+                <div class="text-xs font-semibold uppercase tracking-wider" style="color:var(--text-muted)">LinkedIn</div>
+                <div class="font-semibold text-sm" style="color:var(--text-primary)">linkedin.com/in/brijesh</div>
+              </div>
+            </a>
+
+            <a href="https://github.com/" target="_blank" rel="noopener" class="flex items-center gap-4 p-3 rounded-xl hover:bg-accent hover:bg-opacity-10 transition-all">
+              <span class="w-10 h-10 rounded-lg flex items-center justify-center text-white text-base flex-shrink-0"
+                    style="background:linear-gradient(135deg,#24292e,#586069)">
+                <i class="fab fa-github"></i>
+              </span>
+              <div>
+                <div class="text-xs font-semibold uppercase tracking-wider" style="color:var(--text-muted)">GitHub</div>
+                <div class="font-semibold text-sm" style="color:var(--text-primary)">github.com/brijesh</div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Social Row -->
+          <div class="flex gap-3 pt-2">
+            <a href="https://linkedin.com/" target="_blank" rel="noopener" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://github.com/" target="_blank" rel="noopener" class="social-icon" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://kaggle.com/" target="_blank" rel="noopener" class="social-icon" aria-label="Kaggle"><i class="fab fa-kaggle"></i></a>
+            <a href="mailto:brijesh@email.com" class="social-icon" aria-label="Email"><i class="fas fa-envelope"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="lg:w-7/12 reveal reveal-delay-2">
+        <div class="card p-7">
+          <form id="contactForm" novalidate class="space-y-5">
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div class="form-group">
+                <label for="contactName" class="form-label">Your Name</label>
+                <input
+                  type="text" id="contactName" name="name"
+                  class="form-input" placeholder="Brijesh Shekhda"
+                  required />
+              </div>
+              <div class="form-group">
+                <label for="contactEmail" class="form-label">Email Address</label>
+                <input
+                  type="email" id="contactEmail" name="email"
+                  class="form-input" placeholder="hello@email.com"
+                  required />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="contactSubject" class="form-label">Subject</label>
+              <input
+                type="text" id="contactSubject" name="subject"
+                class="form-input" placeholder="Project Collaboration / Job Opportunity"
+                required />
+            </div>
+
+            <div class="form-group">
+              <label for="contactMessage" class="form-label">Message</label>
+              <textarea
+                id="contactMessage" name="message"
+                class="form-input" rows="5"
+                placeholder="Tell me about your project or opportunity…"
+                required></textarea>
+            </div>
+
+            <div id="formSuccess">
+              ✅ Message sent successfully! I'll get back to you within 24 hours.
+            </div>
+
+            <button type="submit" class="btn-primary w-full justify-center">
+              <i class="fas fa-paper-plane"></i> Send Message
+            </button>
+
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════════ -->
+<footer id="footer">
+  <div class="container">
+    <div class="flex flex-col md:flex-row justify-between items-center gap-8 mb-8">
+
+      <!-- Brand -->
+      <div class="text-center md:text-left">
+        <div class="text-2xl font-black gradient-text tracking-tight">BS.</div>
+        <div class="text-sm mt-1" style="color:var(--text-muted)">Data Analyst & Data Scientist</div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="flex flex-wrap gap-x-6 gap-y-2 justify-center text-sm">
+        <a href="#about"          class="footer-link">About</a>
+        <a href="#skills"         class="footer-link">Skills</a>
+        <a href="#projects"       class="footer-link">Projects</a>
+        <a href="#gallery"        class="footer-link">Gallery</a>
+        <a href="#experience"     class="footer-link">Experience</a>
+        <a href="#certifications" class="footer-link">Certifications</a>
+        <a href="#contact"        class="footer-link">Contact</a>
+      </div>
+
+      <!-- Social -->
+      <div class="flex gap-3">
+        <a href="https://linkedin.com/" target="_blank" rel="noopener" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/"   target="_blank" rel="noopener" class="social-icon" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://kaggle.com/"   target="_blank" rel="noopener" class="social-icon" aria-label="Kaggle"><i class="fab fa-kaggle"></i></a>
+      </div>
+    </div>
+
+    <div class="border-t pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-sm" style="border-color:var(--border)">
+      <p style="color:var(--text-muted)">
+        © 2026 <strong style="color:var(--text-secondary)">Brijesh Shekhda</strong>. All rights reserved.
+      </p>
+      <p style="color:var(--text-muted)">
+        Built with <span class="text-red-400">❤️</span> using HTML · TailwindCSS · Vanilla JS
+      </p>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════════════════
+     SCRIPTS
+═══════════════════════════════════════════════ -->
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>
