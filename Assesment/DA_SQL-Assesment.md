@@ -204,6 +204,7 @@ WHERE SALARY = (SELECT MAX(SALARY) FROM Worker w2 WHERE w1.DEPARTMENT = w2.DEPAR
 
 
 ---
+---
 ## Assignment 2:
 
 ### School Database - Student Table
