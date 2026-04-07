@@ -200,7 +200,7 @@ WHERE SALARY = (SELECT MAX(SALARY) FROM Worker w2 WHERE w1.DEPARTMENT = w2.DEPAR
 | HR          | Vishal     | Singhal   | 300000   |
 
 
-<br style="border: 5px double black;">
+<hr style="border: 5px double black;">
 
 ## Assignment 2:
 
