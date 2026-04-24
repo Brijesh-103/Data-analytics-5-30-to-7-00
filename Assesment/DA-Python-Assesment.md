@@ -4,15 +4,15 @@
 
 ### Design a Python class ClinicAppointment that manages patient appointments in a clinic.
 The system should have the following features:
-➔ Book Appointment:
+###➔ Book Appointment:
 - Prompt for patient name, age, mobile number, and preferred doctor.
 - Show time slots (10am, 11am, 12pm, 2pm, 3pm).
 - Check slot availability and confirm booking.
-➔ View/Cancel Appointment:
+###➔ View/Cancel Appointment:
 - Allow patient to view or cancel their appointment using mobile number.
-➔ Doctor Availability:
+###➔ Doctor Availability:
 - Maintain a maximum of 3 appointments per time slot per doctor.
-➔ Data Persistence:
+###➔ Data Persistence:
 - Store appointments in memory only (no files/dbs required).
 
 
@@ -93,18 +93,18 @@ Appointment cancelled.
 
 ### Design a Python class SchoolManagement that helps manage student admissions and records.
 The system should support:
-➔  New Admission:
+###➔  New Admission:
 -  Collect student name, age, class (1–12), and guardian's mobile number.
 -  Assign a unique student ID automatically.
 -  Validate age: must be between 5 and 18.
 -  Validate mobile number: must be 10 digits.
-➔  View Student Details:
+###➔  View Student Details:
 -  Allow lookup using student ID.
-➔  Update Student Info:
+###➔  Update Student Info:
 -  Update mobile number or class.
-➔  Remove Student Record:
+###➔  Remove Student Record:
 -  Remove a student using their student ID.
-➔  Exit System
+###➔  Exit System
 
 ```python
 class SchoolManagement:
@@ -259,18 +259,18 @@ Exiting system. Goodbye!
 
 ### Design a Python class BusReservation that simulates a basic bus ticket booking system.
 Features should include:
-➔  Show Available Routes:
+###➔  Show Available Routes:
 -  Predefined city routes with fixed prices.
 -  Example: "Mumbai to Pune - ₹500", "Delhi to Jaipur - ₹600", etc.
-➔  Book Ticket:
+###➔  Book Ticket:
 -  Enter passenger name, age, mobile, and route.
 -  Assign seat number (max 40 per bus per route).
 -  Generate a unique ticket ID.
-➔  View Ticket:
+###➔  View Ticket:
 -  Lookup using ticket ID.
-➔  Cancel Ticket:
+###➔  Cancel Ticket:
 -  Cancel the ticket if it exists.
-➔  Exit
+###➔  Exit
 
 ```python
 class BusReservation:
