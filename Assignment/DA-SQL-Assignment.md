@@ -1,17 +1,77 @@
 # SQL Assignment
 
-## Question 8) What is the significance of “%” and “_” operators in the LIKE statement?
-The "%" and "_" operators are used in the LIKE statement in SQL to perform pattern matching in string comparisons.
-- The "%" operator is a wildcard that matches zero or more characters. For example, if you want to find all records where a column starts with "A", 
-you can use the query: `SELECT * FROM table_name WHERE column_name LIKE 'A%';`. This will return all records where the column value starts with "A" followed by any number of characters.
-- The "_" operator is a wildcard that matches exactly one character. For example, if you want to find all records where a column has "A" as the second character, 
-you can use the query: `SELECT * FROM table_name WHERE column_name LIKE '_A%';`. This will return all records where the second character is "A" and there can be any number of characters before and after it.
+## For this assignment, you will finish building the contact management database for MarketCo
+
+### Question 1) Statement to create the Contact table
+```sql
+CREATE TABLE Contact (
+    ContactID INT PRIMARY KEY AUTO_INCREMENT,
+    CompanyID INT NOT NULL,
+    FirstName VARCHAR(45) NOT NULL,
+    LastName VARCHAR(45) NOT NULL,
+    Street VARCHAR(45),
+    City VARCHAR(45),
+    State VARCHAR(2),
+    Zip VARCHAR(10),
+    IsMain BOOLEAN,
+    Email VARCHAR(45),
+    Phone VARCHAR(12),
+    FOREIGN KEY (CompanyID) REFERENCES Company(CompanyID)
+);
+```
+
+Output:
+
+| ContactID | CompanyID | FirstName | LastName | Street | City | State | Zip | IsMain | Email | Phone |
+|-----------|-----------|-----------|----------|--------|------|-------|-----|--------|--------|-------|
 
 
+### Question 2) Statement to create the Employee table
+```sql
+CREATE TABLE Employee (
+    EmployeeID INT PRIMARY KEY AUTO_INCREMENT,
+    CompanyID INT NOT NULL,
+    FirstName VARCHAR(45) NOT NULL,
+    LastName VARCHAR(45) NOT NULL,
+    Street VARCHAR(45),
+    City VARCHAR(45),
+    State VARCHAR(2),
+    Zip VARCHAR(10),
+    Email VARCHAR(45),
+    Phone VARCHAR(12),
+    FOREIGN KEY (CompanyID) REFERENCES Company(CompanyID)
+);
+```
+Output:
+| EmployeeID | CompanyID | FirstName | LastName | Street | City | State | Zip | Email | Phone |
+|------------|-----------|-----------|----------|--------|------|-------|-----|--------|-------|
 
 
-9) Explain normalization in the context of databases.
-10) What does a join in MySQL mean?
-11) 19.What do you understand about DDL, DCL, and DML in MySQL?
-12) What is the role of the MySQL JOIN clause in a query, and what are some
-common types of joins?
+### Question Statement to create the ContactEmployee table
+HINT: Use DATE as the datatype for ContactDate. It allows you to store the
+date in this format: YYYY-MM-DD (i.e., ‘2014-03-12’ for March 12, 2014).
+
+```sql
+CREATE TABLE ContactEmployee (
+    ContactID INT NOT NULL,
+    EmployeeID INT NOT NULL,
+    ContactDate DATE,
+    PRIMARY KEY (ContactID, EmployeeID),
+    FOREIGN KEY (ContactID) REFERENCES Contact(ContactID),
+    FOREIGN KEY (EmployeeID) REFERENCES Employee(EmployeeID)
+);
+```
+Output:
+| ContactID | EmployeeID | ContactDate |
+|-----------|------------|-------------|
+
+### Question 4) In the Employee table, the statement that changes Lesley Bland’s phone number to 215-555-8800
+
+```sql
+UPDATE Employee
+SET Phone = '215-555-8800'
+WHERE FirstName = 'Lesley' AND LastName = 'Bland';
+```
+Output:
+| EmployeeID | CompanyID | FirstName | LastName | Street | City | State | Zip | Email | Phone |
+|------------|-----------|-----------|----------|--------|------|-------|-----|--------|-------|
